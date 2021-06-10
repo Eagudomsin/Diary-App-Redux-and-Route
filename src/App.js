@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import AddDairyForm from './components/AddDairyForm'
+import AllDiary from './components/AllDiary'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Route path="/add-diary">
+        <AddDairyForm />
+      </Route>
+      <Route path="/all-diary">
+        <AllDiary />
+      </Route>
     </div>
   );
 }
